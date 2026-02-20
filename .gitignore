@@ -1,0 +1,44 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.egg-info/
+.Python
+build/
+dist/
+
+# Virtual environment
+.env
+venv/
+env/
+# add your virtual environment folder name here if it's different, e.g.,
+# myenv/ 
+
+# Testing
+.pytest_cache/
+test/__pycache__/
+coverage/
+.coverage
+
+# Editors and IDEs
+# VS Code
+.vscode/
+# PyCharm
+.idea/
+
+# OS-specific files
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# Miscellaneous
+*.log
+npm-debug.log*
+pip-log.txt
+pip-delete-this-line.txt
+
+# Secrets and environment variables
+.flaskenv
+.secrets
+*.key
+*.pem
