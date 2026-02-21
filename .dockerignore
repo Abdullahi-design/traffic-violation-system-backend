@@ -1,0 +1,10 @@
+__pycache__
+*.pyc
+*.pyo
+.env
+.env.local
+venv/
+.git/
+.gitignore
+add_user.py
+alembic/versions/__pycache__
