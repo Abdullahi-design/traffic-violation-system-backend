@@ -100,7 +100,7 @@ async def create_violation(
     # Reload with relationships
     result = await db.execute(
         select(Violation)
-        .options(joinedload(Violation.violation_type), joinedload(Violation.officer))
+        .options(joinedload(Violation.violation_type), joinedload(Violation.officer), joinedload(Violation.payments))
         .where(Violation.id == violation.id)
     )
     return result.unique().scalar_one()
@@ -141,7 +141,7 @@ async def update_violation(
 ):
     result = await db.execute(
         select(Violation)
-        .options(joinedload(Violation.violation_type), joinedload(Violation.officer))
+        .options(joinedload(Violation.violation_type), joinedload(Violation.officer), joinedload(Violation.payments))
         .where(Violation.id == violation_id)
     )
     violation = result.unique().scalar_one_or_none()
@@ -194,7 +194,7 @@ async def upload_evidence(
 ):
     result = await db.execute(
         select(Violation)
-        .options(joinedload(Violation.violation_type), joinedload(Violation.officer))
+        .options(joinedload(Violation.violation_type), joinedload(Violation.officer), joinedload(Violation.payments))
         .where(Violation.id == violation_id)
     )
     violation = result.unique().scalar_one_or_none()
